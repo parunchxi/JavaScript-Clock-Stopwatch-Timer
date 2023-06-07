@@ -1,5 +1,36 @@
 // Swith App
 const displayApp = document.querySelectorAll('section');
+const switchButton = document.querySelectorAll('li.app-show');
+const savedApp = localStorage.getItem('app');
+var button;
+
+setApp(savedApp);
+
+switchButton.forEach(item => {
+    item.addEventListener('click', event => {
+        button = setButton(event);
+        setApp(button.classList[0]);
+    })
+})
+
+function setButton(event) {
+    if (event.target.tagName === 'I' || event.target.tagName === 'P') {
+        return event.target.parentElement;
+    } else if (event.target.tagName === 'LI') {
+        return event.target;
+    }
+}
+
+function toggleButton(button) {
+    switchButton.forEach(item => {
+        if (item.classList.contains(button)) {
+            item.classList.add('toggle');
+        } else {
+            item.classList.remove('toggle');
+        }
+    })
+}
+
 function showApp(app) {
     displayApp.forEach(item => {
         if (item.id === app) {
@@ -10,36 +41,20 @@ function showApp(app) {
     })
 }
 
-function setButton(event) {
-    if (event.target.tagName === 'I' || event.target.tagName === 'P') {
-        return event.target.parentElement;
-    } else if (event.target.tagName === 'LI') {
-        return event.target;
+function setApp(button) {
+    if (button === 'clock') {
+        showApp('clock');
+        saveApp('clock');
+    } else if (button === 'stopwatch') {
+        showApp('stopwatch');
+        saveApp('stopwatch');
+    } else if (button === 'timer') {
+        showApp('timer');
+        saveApp('timer');
     }
+    toggleButton(button);
 }
 
-const switchButton = document.querySelectorAll('li.app-show');
-var button;
-switchButton.forEach(item => {
-    item.addEventListener('click', event => {
-        button = setButton(event);
-        if (button.classList[0] === 'clock-show') {
-            showApp('clock');
-        } else if (button.classList[0] === 'stopwatch-show') {
-            showApp('stopwatch');
-        } else if (button.classList[0] === 'timer-show') {
-            showApp('timer');
-        }
-        toggleButton(button);
-    })
-})
-
-function toggleButton(button) {
-    switchButton.forEach(item => {
-        if (item === button) {
-            item.classList.add('toggle');
-        } else {
-            item.classList.remove('toggle');
-        }
-    })
+function saveApp(app) {
+    localStorage.setItem('app', app);
 }

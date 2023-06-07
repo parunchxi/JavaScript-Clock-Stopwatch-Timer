@@ -25,31 +25,47 @@
         <div class="card">
             <div class="app-nav">
                 <ul>
-                    <li id="clock_show" class="clock-show app-show toggle">
-                        <i class="clock-show ri-time-fill"></i>
-                        <p class="clock-show">Clock</p>
+                    <li id="clock_show" class="clock app-show toggle">
+                        <i class="clock ri-time-fill"></i>
+                        <p class="clock">Clock</p>
                     </li>
-                    <li id="stopwatch_show" class="stopwatch-show app-show">
-                        <i class="stopwatch-show ri-timer-fill"></i>
-                        <p class="stopwatch-show">Stopwatch</p>
+                    <li id="stopwatch_show" class="stopwatch app-show">
+                        <i class="stopwatch ri-timer-fill"></i>
+                        <p class="stopwatch">Stopwatch</p>
                     </li>
-                    <li id="timer_show" class="timer-show app-show">
-                        <i class="timer-show ri-hourglass-fill"></i>
-                        <p class="timer-show">Timer</p>
+                    <li id="timer_show" class="timer app-show">
+                        <i class="timer ri-hourglass-fill"></i>
+                        <p class="timer">Timer</p>
                     </li>
                 </ul>
             </div>
             <div class="app-display">
-                <section id="clock" class="clock">
+                <section id="clock" class="clock-app">
                     <div class="location"></div>
                     <p id="now_date"></p>
                     <h1 id="now_time"></h1>
                 </section>
-                <section id="stopwatch" class="stopwatch invsible">
-                    stopwatch
+                <section id="stopwatch" class="stopwatch-app invsible">
+                    <h1 id="stoptime">00:00:00</h1>
+                    <div class="button-group">
+                        <button id="stopwatch_start">Start</button>
+                        <button id="stopwatch_stop">Stop</button>
+                        <button id="stopwatch_reset">Reset</button>
+                    </div>
                 </section>
-                <section id="timer" class="timer invsible">
-                    timer
+                <section id="timer" class="timer-app invsible">
+                    <div class="timer-input">
+                        <input id="timer_hour" type="text" value="00" maxlength="2">
+                        <p>:</p>
+                        <input id="timer_hour" type="text" value="00" maxlength="2">
+                        <p>:</p>
+                        <input id="timer_hour" type="text" value="00" maxlength="2">
+                    </div>
+                    <div class="button-group">
+                        <button id="timer_start">Start</button>
+                        <button id="timer_stop">Stop</button>
+                        <button id="timer_reset">Reset</button>
+                    </div>
                 </section>
             </div>
         </div>
