@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
     <link rel="icon" type="image/icon" href="img/favicon.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -23,36 +25,40 @@
         <div class="card">
             <div class="app-nav">
                 <ul>
-                    <li class="clock-Show">
-                        <i class="ri-time-fill"></i>
-                        <p>Clock</p>
+                    <li id="clock_show" class="clock-show app-show toggle">
+                        <i class="clock-show ri-time-fill"></i>
+                        <p class="clock-show">Clock</p>
                     </li>
-                    <li class="clock-Show">
-                        <i class="ri-timer-fill"></i>
-                        <p>Stopwatch</p>
+                    <li id="stopwatch_show" class="stopwatch-show app-show">
+                        <i class="stopwatch-show ri-timer-fill"></i>
+                        <p class="stopwatch-show">Stopwatch</p>
                     </li>
-                    <li class="clock-Show">
-                        <i class="ri-hourglass-fill"></i>
-                        <p>Timer</p>
+                    <li id="timer_show" class="timer-show app-show">
+                        <i class="timer-show ri-hourglass-fill"></i>
+                        <p class="timer-show">Timer</p>
                     </li>
                 </ul>
             </div>
             <div class="app-display">
-                <section class="clock">
+                <section id="clock" class="clock">
                     <div class="location"></div>
-                    <p id="now_date">Jun 07 2023</p>
-                    <h1 id="now_time">00:00:00</h1>
+                    <p id="now_date"></p>
+                    <h1 id="now_time"></h1>
                 </section>
-                <section class="stopwatch">
-
+                <section id="stopwatch" class="stopwatch invsible">
+                    stopwatch
                 </section>
-                <section class="timer">
-
+                <section id="timer" class="timer invsible">
+                    timer
                 </section>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/switchApp.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/stopWatch.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/changeTheme.js"></script>
 </body>
 
 </html>

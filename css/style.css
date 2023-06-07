@@ -1,0 +1,108 @@
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    width: 600px;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+}
+
+
+/* App navbar */
+.app-nav {
+    display: grid;
+    place-items: center;
+    user-select: none;
+}
+
+.app-nav ul {
+    width: 550px;
+    padding: 10px;
+    margin: 25px;
+    list-style: none;
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.app-nav li {
+    width: 100%;
+    height: 100;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+.app-nav li i {
+    font-size: 2rem;
+}
+
+.app-nav li p {
+    font-size: 1.25rem;
+}
+
+.app-nav li:hover {
+    background-color: var(--button-text-color);
+    transition: .2s;
+}
+
+li.toggle {
+    background-color: var(--primary-color);
+}
+
+li.toggle:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* App Display */
+.app-display {
+    width: 550px;
+    height: 400px;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+section {
+    width: 550px;
+    padding: 10px;
+    display: block;
+    /* transition: .2s; */
+}
+
+section.invsible {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+}
+
+.clock p {
+    margin-top: 100px;
+    color: var(--primary-text-color);
+    font-size: 3rem;
+    text-align: center;
+}
+
+.clock h1 {
+    color: var(--primary-text-color);
+    font-size: 6rem;
+    text-align: center;
+}
+
+.stopwatch {
+    background-color: red;
+}
+
+.timer {
+    background-color: greenyellow;
+}
