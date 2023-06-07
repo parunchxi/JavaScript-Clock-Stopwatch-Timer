@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="icon" type="image/icon" href="img/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <h1></h1>
+        <div class="link-group">
+            <a id="change_theme"><i class="ri-sun-fill"></i></a>
+            <a id="github" href="https://github.com/parunchxi/"><i class="ri-github-fill"></i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="app-nav">
+                <ul>
+                    <li class="clock-Show">
+                        <i class="ri-time-fill"></i>
+                        <p>Clock</p>
+                    </li>
+                    <li class="clock-Show">
+                        <i class="ri-timer-fill"></i>
+                        <p>Stopwatch</p>
+                    </li>
+                    <li class="clock-Show">
+                        <i class="ri-hourglass-fill"></i>
+                        <p>Timer</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-display">
+                <section class="clock">
+                    <div class="location"></div>
+                    <p id="now_date">Jun 07 2023</p>
+                    <h1 id="now_time">00:00:00</h1>
+                </section>
+                <section class="stopwatch">
+
+                </section>
+                <section class="timer">
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
