@@ -8,12 +8,6 @@ const timerSeconds = document.getElementById('timer_second');
 let defaultHours, defaultMinutes, defaultSeconds;
 var timer;
 
-// timerMinutes.addEventListener("input", function () {
-//     var newValue = this.value;
-//     timerMinutes.value = newValue;
-// });
-
-
 timerStart.addEventListener('click', () => {
     defaultHours = timerHours.value;
     defaultMinutes = timerMinutes.value;
