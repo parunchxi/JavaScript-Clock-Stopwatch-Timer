@@ -30,6 +30,11 @@
     --hover: #455A64;
 }
 
+::selection {
+    background-color: var(--primary-color);
+    color: var(--bg);
+}
+
 body {
     background-color: var(--bg);
 }
