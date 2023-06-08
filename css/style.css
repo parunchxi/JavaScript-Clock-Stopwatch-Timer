@@ -196,3 +196,13 @@ section.invsible {
     border: none;
     outline: none;
 }
+
+.timer-app input::-webkit-outer-spin-button,
+.timer-app input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.timer-app input[type=number] {
+    -moz-appearance: textfield;
+}

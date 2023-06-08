@@ -1,9 +1,10 @@
+// Stopwatch
 const stopwatchTime = document.getElementById('stoptime');
 const stopwatchStart = document.getElementById('stopwatch_start');
 const stopwatchStop = document.getElementById('stopwatch_stop');
 const stopwatchReset = document.getElementById('stopwatch_reset');
 let hour = 0, minute = 0, second = 0;
-var Interval;
+var Interval, canStrart = true;
 
 function startCount() {
     second = parseInt(second);
@@ -34,16 +35,21 @@ function startCount() {
 }
 
 stopwatchStart.addEventListener('click', (() => {
-    Interval = setInterval(startCount, 1000);
+    if (canStrart === true) {
+        Interval = setInterval(startCount, 1000);
+        canStrart = false;
+    }
 }))
 
 stopwatchStop.addEventListener('click', (() => {
     clearInterval(Interval);
+    canStrart = true;
 }))
 
 stopwatchReset.addEventListener('click', (() => {
     clearInterval(Interval);
     stopwatchTime.innerHTML = `00:00:00`;
+    canStrart = true;
     hour = 0;
     minute = 0;
     second = 0;
