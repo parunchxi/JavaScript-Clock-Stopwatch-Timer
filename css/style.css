@@ -144,6 +144,15 @@ section.invsible {
     background-color: var(--hover);
 }
 
+.button-group button:disabled {
+    cursor: not-allowed;
+    background-color: var(--button-bg);
+}
+
+.button-group button:disabled:hover {
+    background-color: var(--button-bg);
+}
+
 .clock-app p {
     margin-top: 100px;
     color: var(--primary-text-color);

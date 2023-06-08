@@ -4,7 +4,7 @@ const stopwatchStart = document.getElementById('stopwatch_start');
 const stopwatchStop = document.getElementById('stopwatch_stop');
 const stopwatchReset = document.getElementById('stopwatch_reset');
 let hour = 0, minute = 0, second = 0;
-var Interval, canStrart = true;
+var Interval;
 
 function startCount() {
     second = parseInt(second);
@@ -34,23 +34,21 @@ function startCount() {
     stopwatchTime.innerHTML = `${hour}:${minute}:${second}`;
 }
 
-stopwatchStart.addEventListener('click', (() => {
-    if (canStrart === true) {
-        Interval = setInterval(startCount, 1000);
-        canStrart = false;
-    }
-}))
+stopwatchStart.addEventListener('click', () => {
+    Interval = setInterval(startCount, 1000);
+    stopwatchStart.disabled = 'true';
+})
 
-stopwatchStop.addEventListener('click', (() => {
+stopwatchStop.addEventListener('click', () => {
     clearInterval(Interval);
-    canStrart = true;
-}))
+    stopwatchStart.removeAttribute('disabled');
+})
 
-stopwatchReset.addEventListener('click', (() => {
+stopwatchReset.addEventListener('click', () => {
     clearInterval(Interval);
     stopwatchTime.innerHTML = `00:00:00`;
-    canStrart = true;
+    stopwatchStart.removeAttribute('disabled');
     hour = 0;
     minute = 0;
     second = 0;
-}))
+})
