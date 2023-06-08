@@ -5,11 +5,39 @@ const timerReset = document.getElementById('timer_reset');
 const timerHours = document.getElementById('timer_hour');
 const timerMinutes = document.getElementById('timer_minute');
 const timerSeconds = document.getElementById('timer_second');
+let defaultHours, defaultMinutes, defaultSeconds;
 var timer;
 
-let defaultHours = timerHours.value;
-let defaultMinutes = timerMinutes.value;
-let defaultSeconds = timerSeconds.value;
+// timerMinutes.addEventListener("input", function () {
+//     var newValue = this.value;
+//     timerMinutes.value = newValue;
+// });
+
+
+timerStart.addEventListener('click', () => {
+    defaultHours = timerHours.value;
+    defaultMinutes = timerMinutes.value;
+    defaultSeconds = timerSeconds.value;
+    timerStart.disabled = true;
+    timer = setInterval(countdown, 1000);
+});
+
+timerStop.addEventListener('click', () => {
+    clearInterval(timer);
+    timerStart.disabled = false;
+});
+
+timerReset.addEventListener('click', () => {
+    clearInterval(timer);
+    setDefault();
+});
+
+function setDefault() {
+    timerStart.disabled = false;
+    timerHours.value = defaultHours;
+    timerMinutes.value = defaultMinutes;
+    timerSeconds.value = defaultSeconds;
+}
 
 let totalSeconds = parseInt(timerHours.value) * 3600 + parseInt(timerMinutes.value) * 60 + parseInt(timerSeconds.value);
 function countdown() {
@@ -33,30 +61,8 @@ function countdown() {
 
     if (totalSeconds === 0) {
         console.log('Countdown finished!');
+        clearInterval(timer);
         setDefault();
     }
     totalSeconds--;
-}
-
-timerStart.addEventListener('click', () => {
-    timerStart.disabled = true;
-    timer = setInterval(countdown, 1000);
-    countdown();
-});
-
-timerStop.addEventListener('click', () => {
-    clearInterval(timer);
-    timerStart.disabled = false;
-});
-
-timerReset.addEventListener('click', () => {
-    setDefault();
-});
-
-function setDefault() {
-    clearInterval(timer);
-    timerStart.disabled = false;
-    timerHours.value = defaultHours;
-    timerMinutes.value = defaultMinutes;
-    timerSeconds.value = defaultSeconds;
 }
