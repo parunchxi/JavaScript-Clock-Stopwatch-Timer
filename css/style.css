@@ -211,7 +211,3 @@ section.invsible {
     -webkit-appearance: none;
     margin: 0;
 }
-
-.timer-app input[type=number] {
-    -moz-appearance: textfield;
-}
