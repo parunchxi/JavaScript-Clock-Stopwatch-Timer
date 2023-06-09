@@ -4,7 +4,9 @@ const switchButton = document.querySelectorAll('li.app-show');
 const savedApp = localStorage.getItem('app');
 var button;
 
-setApp(savedApp);
+if (savedApp) {
+    setApp(savedApp);
+}
 
 switchButton.forEach(item => {
     item.addEventListener('click', event => {
