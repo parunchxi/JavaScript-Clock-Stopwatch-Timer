@@ -1,6 +1,6 @@
 # Clock / Stopwatch / Timer (HTML,CSS,JavaScript)
 
-This Weather App has been developed using HTML, CSS, and Vanilla JavaScript.
+Clock, Stopwatch, and Timer have been developed using HTML, CSS, and Vanilla JavaScript.
 
 ## Features
 - Clock (Show curent date and time.)
