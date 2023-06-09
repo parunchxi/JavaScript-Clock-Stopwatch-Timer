@@ -35,7 +35,6 @@ function setDefault() {
 }
 
 function countdown() {
-    console.log(totalSeconds);
     let hoursRemaining = Math.floor(totalSeconds / 3600);
     let minutesRemaining = Math.floor((totalSeconds % 3600) / 60);
     let secondsRemaining = totalSeconds % 60;
