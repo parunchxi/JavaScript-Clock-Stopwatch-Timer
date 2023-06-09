@@ -6,13 +6,14 @@ const timerHours = document.getElementById('timer_hour');
 const timerMinutes = document.getElementById('timer_minute');
 const timerSeconds = document.getElementById('timer_second');
 let defaultHours, defaultMinutes, defaultSeconds;
-var timer;
+var timer, totalSeconds;
 
 timerStart.addEventListener('click', () => {
     defaultHours = timerHours.value;
     defaultMinutes = timerMinutes.value;
     defaultSeconds = timerSeconds.value;
     timerStart.disabled = true;
+    totalSeconds = parseInt(defaultHours) * 3600 + parseInt(defaultMinutes) * 60 + parseInt(defaultSeconds);
     timer = setInterval(countdown, 1000);
 });
 
@@ -33,8 +34,8 @@ function setDefault() {
     timerSeconds.value = defaultSeconds;
 }
 
-let totalSeconds = parseInt(timerHours.value) * 3600 + parseInt(timerMinutes.value) * 60 + parseInt(timerSeconds.value);
 function countdown() {
+    console.log(totalSeconds);
     let hoursRemaining = Math.floor(totalSeconds / 3600);
     let minutesRemaining = Math.floor((totalSeconds % 3600) / 60);
     let secondsRemaining = totalSeconds % 60;
